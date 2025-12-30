@@ -3,6 +3,7 @@ const screen2 = document.getElementById("screen2");
 const screen3 = document.getElementById("screen3");
 const screen4 = document.getElementById("screen4");
 const bgMusic = document.getElementById("bgMusic");
+const passwordInput = document.getElementById("passwordInput");
 
 document.getElementById("helloFamily").onclick = () => {
   screen1.classList.remove("active");
@@ -50,7 +51,7 @@ function startTyping() {
 
     if (i >= fullText.length) {
       clearInterval(typing);
-      setTimeout(openGallery, 2000); // move to Interface 4
+      setTimeout(openGallery, 2000); // 2 sec delay then Interface 4
     }
   }, 40);
 }
