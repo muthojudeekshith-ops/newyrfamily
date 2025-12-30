@@ -40,7 +40,7 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Password */
+/* Password box */
 .password-box {
   background: white;
   padding: 25px;
@@ -83,16 +83,23 @@ body {
   line-height: 1.6;
 }
 
-/* Interface 4 Gallery */
+/* Gallery (Interface 4) */
+#screen4 {
+  width: 100%;
+  height: 100%;
+}
+
 .gallery {
   width: 90%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
 }
 
 .row {
+  width: 100%;
   display: grid;
   gap: 10px;
 }
@@ -124,7 +131,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .particle {
