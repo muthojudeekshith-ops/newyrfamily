@@ -51,21 +51,19 @@ body {
 
 .password-box input {
   padding: 10px;
-  font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 .password-box button {
-  padding: 10px 15px;
-  border: none;
   background: #ff4f9a;
   color: white;
+  border: none;
+  padding: 10px 15px;
   border-radius: 8px;
-  cursor: pointer;
 }
 
-/* Card */
+/* Card (Interface 3) */
 .card {
   width: 80%;
   max-width: 350px;
@@ -73,25 +71,59 @@ body {
   background: white;
   border-radius: 25px;
   padding: 20px;
-  overflow-y: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
   z-index: 2;
 }
 
 .card-content {
-  white-space: pre-wrap;
-  font-size: 1rem;
+  white-space: pre;
+  display: inline-block;
   line-height: 1.6;
 }
 
-/* Floating Particles */
+/* Interface 4 Gallery */
+.gallery {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: grid;
+  gap: 10px;
+}
+
+.row-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Emojis */
 #particles {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -103,11 +135,11 @@ body {
 
 @keyframes floatUp {
   from {
-    transform: translateY(100vh) scale(0.8);
+    transform: translateY(100vh);
     opacity: 1;
   }
   to {
-    transform: translateY(-10vh) scale(1.2);
+    transform: translateY(-10vh);
     opacity: 0;
   }
 }
