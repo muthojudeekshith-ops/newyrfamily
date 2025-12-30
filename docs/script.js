@@ -4,6 +4,7 @@ const screen3 = document.getElementById("screen3");
 const screen4 = document.getElementById("screen4");
 const bgMusic = document.getElementById("bgMusic");
 const passwordInput = document.getElementById("passwordInput");
+const nextBtn = document.getElementById("nextBtn");
 
 document.getElementById("helloFamily").onclick = () => {
   screen1.classList.remove("active");
@@ -51,15 +52,16 @@ function startTyping() {
 
     if (i >= fullText.length) {
       clearInterval(typing);
-      setTimeout(openGallery, 2000); // 2 sec delay then Interface 4
+      nextBtn.style.display = "block"; // show Next button
     }
-  }, 40);
+  }, 40); // typing speed unchanged
 }
 
-function openGallery() {
+// Next button click → Interface 4
+nextBtn.onclick = () => {
   screen3.classList.remove("active");
   screen4.classList.add("active");
-}
+};
 
 /* Emoji particles */
 const emojis = ["🤗", "🥳", "💐", "🎂"];
